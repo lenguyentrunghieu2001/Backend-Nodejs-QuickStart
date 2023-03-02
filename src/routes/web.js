@@ -7,13 +7,14 @@ const {
   putCRUD,
   getDeleteCRUD,
 } = require("../controllers/homeController");
-const routes = express.Router();
 
-routes.get("/", index);
-routes.get("/crud", getCRUD);
-routes.post("/post-crud", postCRUD);
-routes.get("/edit-crud/:id?", getEditCRUD);
-routes.post("/put-crud", putCRUD);
-routes.get("/delete-crud/:id?", getDeleteCRUD);
+const router = express.Router();
 
-module.exports = routes;
+router.get("/", index);
+router.get("/crud", getCRUD);
+router.post("/post-crud", postCRUD);
+router.get("/edit-crud/:id?", getEditCRUD);
+router.post("/put-crud", putCRUD);
+router.get("/delete-crud/:id?", getDeleteCRUD);
+
+module.exports = router;
