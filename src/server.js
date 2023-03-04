@@ -1,11 +1,16 @@
 const express = require("express");
 const ConnectDB = require("./config/database");
 const configViewEngine = require("./config/viewEngine");
-require("dotenv").config();
 const webRouter = require("./routes/web");
 const userRouter = require("./routes/user");
+const cors = require("./config/cors");
 
+require("dotenv").config();
 const app = express();
+
+// setting cors
+cors(app);
+
 const port = process.env.PORT || 3333;
 
 // connect to database
